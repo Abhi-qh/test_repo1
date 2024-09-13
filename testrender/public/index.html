@@ -3,18 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Unconventional Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital@0;1&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 20px;
+            padding: 20px;
+        }
+        header {
+            grid-column: 1 / -1;
+            background-color: #ff6b6b;
+            padding: 20px;
+            transform: skew(-5deg);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            transform: skew(5deg);
+        }
+        main {
+            grid-column: 2 / 12;
+            background-color: #4ecdc4;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 0px #ff6b6b;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #fff;
+        }
+        footer {
+            grid-column: 1 / -1;
+            background-color: #45b7d7;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-style: italic;
+            transform: skew(5deg);
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            main {
+                grid-column: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    <main>
-        <p>This is a simple HTML page.</p>
-    </main>
-    <footer>
-        <p>© 2024 My Website</p>
-    </footer>
+    <div class="container">
+        <header>
+            <h1>Welcome to My Unconventional Space</h1>
+        </header>
+        <main>
+            <p>This is not your typical webpage. It's a canvas for creativity, a playground for ideas, and a rebellion against the ordinary. Explore the unexpected!</p>
+        </main>
+        <footer>
+            <p>© 2024 Breaking Design Norms</p>
+        </footer>
+    </div>
 </body>
 </html>
