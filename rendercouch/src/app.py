@@ -1,10 +1,21 @@
 from flask import Flask, render_template, request, redirect, url_for
 import couchdb
+import os 
 
 app = Flask(__name__, template_folder='../public', static_folder='../public')
 
 # CouchDB connection
-couch = couchdb.Server('http://render:render@localhost:5985/')
+# couch = couchdb.Server('http://render:render@localhost:5985/')
+
+# couch_host = os.environ.get('COUCHDB_HOST', 'render:render@localhost')
+
+# # CouchDB connection
+# couch = couchdb.Server(f'http://{couch_host}:5985/')
+couch_username = os.environ.get('COUCHDB_USERNAME', 'render')
+couch_password = os.environ.get('COUCHDB_PASSWORD', 'render')
+couch_host = os.environ.get('COUCHDB_HOST', 'localhost')
+
+couch = couchdb.Server(f'http://{couch_username}:{couch_password}@{couch_host}:5985/')
 
 if 'rendercouch' in couch:
     db = couch['rendercouch']

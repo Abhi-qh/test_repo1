@@ -1,0 +1,20 @@
+build:
+  command: echo "Build complete"
+
+start:
+  command: python src/app.py
+
+services:
+  - type: web
+    name: your-app-name
+    env: python
+    build:
+      command: echo "Build complete"
+    start:
+      command: python src/app.py
+    healthCheck:
+      path: /health
+      checkInterval: 10
+      timeout: 5
+      threshold: 2
+    port: 5000
